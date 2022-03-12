@@ -61,14 +61,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val minute = time / 6000
 
             tv_millisecond.text = if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
+
             tv_second.text = if(second < 10) ":0${second}" else ":${second}"
+
             tv_minute.text = "${minute}"
 
 
         }
     }
     private fun pause(){
-
     }
     private fun refresh(){
 
