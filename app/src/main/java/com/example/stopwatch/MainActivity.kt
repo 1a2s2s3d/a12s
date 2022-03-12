@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun start(){
         btn_start.text = "일시정지"
         btn_start.setBackgroundColor(getColor(R.color.red))
-        isRunning
+        isRunning = true
 
         timer = timer(period = 10){
             time++
@@ -60,8 +60,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val second = (time % 6000) / 100
             val minute = time / 6000
 
-            tv_millisecond.text =
-                if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
+            tv_millisecond.text = if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
+            tv_second.text = if(second < 10) ":0${second}" else ":${second}"
+            tv_minute.text = "${minute}"
 
 
         }
